@@ -48,7 +48,7 @@ public class ApiHelper {
                 .when()
                 .post("/api/v1/pay")
                 .then()
-                .statusCode(500);
+                .statusCode(400);
     }
 
     public static void createCreditError(DataHelper.CardInfo cardData){
@@ -58,6 +58,6 @@ public class ApiHelper {
                 .when()
                 .post("/api/v1/credit")
                 .then()
-                .statusCode(500);
+                .statusCode(400);
     }
 }
