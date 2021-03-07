@@ -1,7 +1,6 @@
 package ru.netology.helpers;
 
 import lombok.val;
-import org.aeonbits.owner.ConfigFactory;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import ru.netology.entity.db.DataBaseCredit;
@@ -13,13 +12,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBHelper {
-    final static AppConfig config = ConfigFactory.create(AppConfig.class);
 
-    private static Connection getDBConnection(){
+    private static Connection getDBConnection() {
         Connection connection = null;
         try {
             connection =  DriverManager.getConnection(
-                    config.dataBaseUrl(),
+                    System.getenv("DB_URL"),
                     "app",
                     "pass");
         } catch (SQLException ex) {

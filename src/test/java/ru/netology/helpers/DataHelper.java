@@ -65,7 +65,7 @@ public class DataHelper {
 
   public static String getNotExistedCardNumber() {
     Faker faker = new Faker(new Locale("en"));
-    return faker.finance().creditCard(CreditCardType.VISA).replace("-","");
+    return faker.finance().creditCard(CreditCardType.VISA).replace("-"," ");
   }
 
   public static String getStatusByCard(CardInfo card){

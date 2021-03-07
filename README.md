@@ -14,20 +14,32 @@ docker-compose up
 
 ### Запуск SUT
 
+для postgresql
 ```
-java -jar artifacts/aqa-shop.jar
+DB_URL=jdbc:postgresql://localhost:5432/app java -jar artifacts/aqa-shop.jar
+```
+для mysql
+```
+DB_URL=jdbc:mysql://localhost:3306/app java -jar artifacts/aqa-shop.jar
+``` 
+
+### Запуск Teстов 
+
+для postgresql
+```
+DB_URL=jdbc:postgresql://localhost:5432/app gradle test 
 ```
 
-### Запуск Teстов
+для mysql
+```
+DB_URL=jdbc:mysql://localhost:3306/app gradle test 
+```
 
-```
-gradle test
-```
 ### Формирование allure отчета
 
 1 раз выполнить 
 ```
-gradle allureServe
+gradle allureReport
 ```
 
 после каждого прогона тестов

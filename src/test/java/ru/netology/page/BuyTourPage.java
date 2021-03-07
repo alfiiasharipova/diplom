@@ -15,8 +15,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class BuyTourPage {
-    private final SelenideElement payButton = $(byText("Купить"));
-    private final SelenideElement creditButton = $(byText("Купить в кредит"));
     private final SelenideElement cardNumber = $x(createXPathForField("Номер карты"));
     private final SelenideElement month = $x(createXPathForField("Месяц"));
     private final SelenideElement year = $x(createXPathForField("Год"));
@@ -30,16 +28,6 @@ public class BuyTourPage {
     private final SelenideElement confirmButton = $(byText("Продолжить"));
     private final SelenideElement notificationOk = $(".notification_status_ok");
     private final SelenideElement tourAmount = $x("//*[contains(text(), 'руб')]");
-
-    @Step("Нажать на кнопку Купить")
-    public void clickPayButton() {
-        payButton.click();
-    }
-
-    @Step("Нажать на кнопку Купить в кредит")
-    public void clickCreditButton() {
-        creditButton.click();
-    }
 
     @Step("Ввести номер карты")
     public void enterCardNumber(String cardNumber) {

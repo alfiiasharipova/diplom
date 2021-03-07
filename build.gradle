@@ -30,7 +30,6 @@ dependencies {
     testImplementation 'io.qameta.allure:allure-assertj:2.12.1'
     testImplementation 'io.qameta.allure:allure-rest-assured:2.12.1'
 
-
 }
 
 allure {
